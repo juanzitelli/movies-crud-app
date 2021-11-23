@@ -1,21 +1,23 @@
-import { createTheme } from "@mui/material";
+import { createTheme, responsiveFontSizes } from "@mui/material";
 
-export const theme = createTheme({
+const baseTheme = createTheme({
   palette: {
+    mode: "dark",
     primary: {
-      main: "#33658a",
+      main: "#f6ae2d",
     },
     secondary: {
-      main: "#f6ae2d",
+      main: "#33658a",
     },
   },
   typography: {
     allVariants: {
       textTransform: "none",
+      fontFamily: "Inter",
     },
   },
   shape: {
-    borderRadius: 10,
+    borderRadius: 5,
   },
   components: {
     MuiButtonBase: {
@@ -26,3 +28,5 @@ export const theme = createTheme({
     },
   },
 });
+
+export const theme = responsiveFontSizes(baseTheme);
