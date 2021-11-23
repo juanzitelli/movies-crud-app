@@ -9,8 +9,23 @@ export const Navbar = (props: Props) => {
   return (
     <AppBar position="relative">
       <Toolbar>
-        <Movie sx={{ mr: 2 }} />
+        <Movie sx={{ mr: 1 }} color="primary" />
         <NextLink href="/">
+          <Link
+            sx={{
+              color: "primary",
+              textDecoration: "none",
+              fontWeight: 700,
+              cursor: "pointer",
+              marginRight: "2rem",
+            }}
+          >
+            <Typography variant="h6" color="inherit" noWrap>
+              JZM
+            </Typography>
+          </Link>
+        </NextLink>
+        <NextLink href="/movies">
           <Link
             sx={{
               color: "inherit",
@@ -19,8 +34,8 @@ export const Navbar = (props: Props) => {
               cursor: "pointer",
             }}
           >
-            <Typography variant="h6" color="inherit" noWrap>
-              Movies 🍿
+            <Typography variant="body1" color="inherit" noWrap>
+              Movies List
             </Typography>
           </Link>
         </NextLink>

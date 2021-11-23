@@ -1,4 +1,11 @@
-import { Alert, CircularProgress, Snackbar, Stack } from "@mui/material";
+import {
+  Alert,
+  CircularProgress,
+  Divider,
+  Snackbar,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React from "react";
 import { Movie } from "../../../../types";
 import { useEditMovie } from "./../../../../hooks/movies/useEditMovie";
@@ -14,6 +21,8 @@ export const EditMovieForm = ({ movie }: { movie: Movie }) => {
 
   return (
     <>
+      <Typography variant="h3">{`Edit "${movie.name}"`}</Typography>
+      <Divider sx={{ marginBottom: "1rem" }} />
       <BaseMovieForm
         defaultValues={{ ...movie }}
         onSubmit={onEditSubmitHandler}
