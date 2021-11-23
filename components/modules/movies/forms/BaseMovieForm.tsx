@@ -48,8 +48,6 @@ export const BaseMovieForm = ({
     reValidateMode: "onSubmit",
   });
 
-  console.log({ defaultValues });
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Stack direction="column" alignItems="flex-start" gap={2}>
