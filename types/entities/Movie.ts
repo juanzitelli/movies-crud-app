@@ -1,18 +1,14 @@
-export interface Genre {
-  name: string;
-}
-
-export interface Award {
-  name: string;
-  year: number;
-}
-
-export interface Movie {
+export type Movie = {
+  _id: string;
   name: string;
   overview: string;
-  release_date: Date;
+  release_date: Date | string;
   director: string;
-  genres: Genre[];
-  awards: Award[];
+  genres: string[];
   adults: boolean;
-}
+  __v?: number;
+};
+
+export type MovieWithoutId = Omit<Movie, "_id">;
+
+export type MovieId = string | string[] | undefined;
