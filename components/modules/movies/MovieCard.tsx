@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardActions,
@@ -31,7 +32,7 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
 
   return (
     <Grid item>
-      <Card sx={{ minWidth: 345 }}>
+      <Card>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {movie.name}
@@ -41,23 +42,25 @@ export const MovieCard = ({ movie }: MovieCardProps) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button variant="outlined" color="primary">
-            <NextLink href={`/movies/edit/${movie._id}`}>
-              <a>
-                <Link>Edit movie</Link>
-              </a>
-            </NextLink>
-          </Button>
+          <Box sx={{ display: "flex", flexWrap: "wrap" }}>
+            <Button variant="outlined" color="primary">
+              <NextLink href={`/movies/edit/${movie._id}`}>
+                <a>
+                  <Link>Edit movie</Link>
+                </a>
+              </NextLink>
+            </Button>
 
-          <Button
-            onClick={() => {
-              onDeleteMovieClickHandler({ movieId: movie._id });
-            }}
-            variant="outlined"
-            color="error"
-          >
-            <Typography variant="button">Delete movie</Typography>
-          </Button>
+            <Button
+              onClick={() => {
+                onDeleteMovieClickHandler({ movieId: movie._id });
+              }}
+              variant="outlined"
+              color="error"
+            >
+              <Typography variant="button">Delete movie</Typography>
+            </Button>
+          </Box>
         </CardActions>
       </Card>
     </Grid>
